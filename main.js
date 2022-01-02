@@ -16,16 +16,18 @@ for(const link of links ){
   })
 }
 /*mudar o header da pagina quando der scroll*/
-const header = document.querySelector('#header')
-const navHeigth = header.offsetHeight
-
-window.addEventListener('scroll', function(){
+function mudarHeader(){
+  const header = document.querySelector('#header')
+  const navHeigth = header.offsetHeight
   if(this.window.scrollY >= navHeigth){
     header.classList.add('scroll')
   }else{
     header.classList.remove('scroll')
   }
-})
+
+}
+
+
 
 /*Swiper*/
 const swiper = new Swiper('.swiper-container', {
@@ -51,6 +53,23 @@ scrollReveal.reveal(
   #services header, #services .card,
   #testimonials header, #testimonials .testimonials
   #contact .text, #contact .links
-  `,
+  footer .brand, footer .social`,
   { interval: 100 }
 )
+
+/*Voltar para o topo*/
+function backToTop(){
+  const backToTopButton = document.querySelector('.back-to-top')
+  if(window.scrollY >= 560){
+    backToTopButton.classList.add('show')
+  }else{
+    backToTopButton.classList.remove('show')
+  }
+}
+
+
+
+window.addEventListener('scroll', function(){
+  mudarHeader()
+  backToTop()
+})
