@@ -433,6 +433,9 @@ nav.show div.icon-close {
 .swiper-pagination-bullet-active {
   background: var(--base-color);
 }
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+  position: relative;
+}
 
 /*====  CONTACT ============================ */
 #contact .grid {
