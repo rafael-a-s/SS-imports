@@ -304,7 +304,53 @@ nav.show div.icon-close {
 #home .text p {
   margin-bottom: 2rem;
 }
+/*====  CATALOG ============================ */
+#catalog .container .div-catalog{
+ margin: 0 auto;
+ border: 0.125rem solid var(--base-color);
+ border-radius: 0.1rem;
+  
+}
+#catalog .container .div-catalog p{
+  margin-top: 0;
+  
+  
+  font-size: 1.2rem;
+  margin-left: 1rem;
 
+  color: var(--title-color);
+
+  grid-auto-flow: column ;
+  grid-template-columns: 0.2fr;
+  
+}
+#catalog .container .div-catalog p span{
+  color: var(--base-color);
+  font-size: 2em;
+}
+#catalog .container .div-catalog h3{
+  margin-top: 1rem;
+  color: var(--title-color);
+  text-align: center;
+}
+#catalog .container .div-catalog .carousel{
+  padding: 0;
+}
+#catalog .container .div-catalog .carousel .item img,
+#catalog .container .div-catalog .carousel .item p{
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+#catalog .container .div-catalog .carousel .item.active img,
+#catalog .container .div-catalog .carousel .item.active p{
+  opacity: 1;
+  visibility: visible;
+  display: grid;
+
+
+}
 /*====  ABOUT ============================ */
 #about {
   background: white;
