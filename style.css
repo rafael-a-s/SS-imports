@@ -311,9 +311,23 @@ nav.show div.icon-close {
  border-radius: 0.1rem;
   
 }
+#catalog .container .div-catalog .arrows{
+  display: flex;
+  align-items: center;
+  
+  
+}
+#catalog .container .div-catalog .arrows a{
+  display: inline-block;
+  
+}
+#catalog .container .div-catalog .arrows a img{
+  width: 1.5rem;
+  
+}
 #catalog .container .div-catalog p{
   margin-top: 0;
-  
+  font-family: var(--body-font), sans-serif;
   
   font-size: 1.2rem;
   margin-left: 1rem;
