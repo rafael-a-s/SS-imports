@@ -309,19 +309,26 @@ nav.show div.icon-close {
  margin: 0 auto;
  border: 0.125rem solid var(--base-color);
  border-radius: 0.1rem;
-  
+ 
 }
-#catalog .container .div-catalog .arrows{
+#catalog .container .div-catalog .carousel .arrows{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 10rem;
+  
+  
   display: flex;
+  justify-content: center;
   align-items: center;
-  
+  gap: 26rem;
   
 }
-#catalog .container .div-catalog .arrows a{
+#catalog .container .div-catalog .carousel .arrows a{
   display: inline-block;
   
 }
-#catalog .container .div-catalog .arrows a img{
+#catalog .container .div-catalog .carousel .arrows a img{
   width: 1.5rem;
   
 }
@@ -349,6 +356,9 @@ nav.show div.icon-close {
 }
 #catalog .container .div-catalog .carousel{
   padding: 0;
+  position: relative;
+  height: 100%;
+
 }
 #catalog .container .div-catalog .carousel .item img,
 #catalog .container .div-catalog .carousel .item p{
