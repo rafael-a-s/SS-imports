@@ -108,3 +108,18 @@ window.addEventListener('scroll', function () {
   backToTop()
   activateMenuAtCurrentSection()
 })
+
+/*Logica carousel*/
+const skip =
+ document.querySelector
+ ('#catalog .container .div-catalog .carousel .arrows #skip');
+ skip.addEventListener('click',function(){
+   console.log('skip')
+ })
+
+ const back =
+  document.querySelector
+  ('#catalog .container .div-catalog .carousel .arrows #back');
+  back.addEventListener('click', function(){
+    console.log('back')
+  })
