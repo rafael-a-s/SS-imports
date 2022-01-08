@@ -110,11 +110,15 @@ window.addEventListener('scroll', function () {
 })
 
 /*Logica carousel*/
+var pos = 0
+var valueSkip = 0
+var valueBack = 0
 const skip =
  document.querySelector
  ('#catalog .container .div-catalog .carousel .arrows #skip');
  skip.addEventListener('click',function(){
    console.log('skip')
+   valueSkip = 1
  })
 
  const back =
@@ -122,4 +126,36 @@ const skip =
   ('#catalog .container .div-catalog .carousel .arrows #back');
   back.addEventListener('click', function(){
     console.log('back')
+  })
+
+ 
+  const item = document.querySelectorAll('#catalog .container .div-catalog .carousel .item ');
+  function slide(){
+    
+    
+   
+   
+      if(valueSkip == 1){
+        for (let index = 0; index < item.length; index++) {
+          if(pos +1 == index){
+            item.classList.add('active')
+            console.log('opa')
+            valueSkip = 0
+          }
+        }
+      }
+      if(valueBack == 2){
+        for (let index = 0; index < item.length; index++) {
+          if(pos - 1 == index){
+            item.classList.add('active')
+            console.log('opa')
+            valueBack = 0
+          }
+        }
+      }
+      
+    
+  }
+  window.addEventListener('click', function(){
+    slide()
   })
