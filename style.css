@@ -311,6 +311,7 @@ nav.show div.icon-close {
  border-radius: 0.1rem;
  
 }
+
 #catalog .container .div-catalog .carousel .arrows{
   position: absolute;
   width: 100%;
@@ -331,6 +332,9 @@ nav.show div.icon-close {
 #catalog .container .div-catalog .carousel .arrows a img{
   width: 1.5rem;
   
+}
+#catalog .container .div-catalog .carousel .arrows #back{
+  opacity: 0;
 }
 #catalog .container .div-catalog p{
   margin-top: 0;
@@ -360,20 +364,24 @@ nav.show div.icon-close {
   height: 100%;
 
 }
+
 #catalog .container .div-catalog .carousel .item img,
 #catalog .container .div-catalog .carousel .item p{
   width: 100%;
   opacity: 0;
   visibility: hidden;
   display: none;
+  
 }
 #catalog .container .div-catalog .carousel .item.active img,
 #catalog .container .div-catalog .carousel .item.active p{
   opacity: 1;
   visibility: visible;
-  display: grid;
-
-
+  display: flex;
+  gap: 1rem;
+}
+#catalog .container .div-catalog .carousel .item .text-min{
+  font-size: 0.9rem;
 }
 /*====  ABOUT ============================ */
 #about {

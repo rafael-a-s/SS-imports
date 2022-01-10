@@ -116,46 +116,67 @@ var valueBack = 0
 const skip =
  document.querySelector
  ('#catalog .container .div-catalog .carousel .arrows #skip');
- skip.addEventListener('click',function(){
-   console.log('skip')
-   valueSkip = 1
- })
-
  const back =
   document.querySelector
   ('#catalog .container .div-catalog .carousel .arrows #back');
+
+  const item = document.querySelectorAll('#catalog .container .div-catalog .carousel .item ');
+  
+  
+  skip.addEventListener('click',function(){
+    
+    console.log(pos)
+    
+    if(pos > item.length -2){
+      console.log('entrou'+item.length-1)
+      return;
+    }else{
+      pos ++;
+    }
+    if(pos == item.length -1){
+      skip.style.opacity = '0'
+    }
+    if(pos>0){
+      back.style.opacity = '1'
+    }
+
+    for (let index = 0; index < item.length; index++) {
+      
+      
+      if(pos == index){
+        item[pos - 1].classList.remove('active')
+       
+        item[pos].classList.add('active')
+        
+      }
+    }
+    
+  })
+
   back.addEventListener('click', function(){
-    console.log('back')
+    
+    if(pos < 1){
+      
+      return;
+    }else{
+      pos --;
+      
+    }
+    if(pos<item.length){
+      skip.style.opacity = '1'
+    }
+    if(pos<1){
+      back.style.opacity = '0'
+    }
+    for (let index = 0; index < item.length; index++) {
+      
+      console.log(item.length)
+      if(pos == index){
+        item[pos + 1].classList.remove('active')
+        item[pos].classList.add('active')
+       
+      }
+    }
   })
 
  
-  const item = document.querySelectorAll('#catalog .container .div-catalog .carousel .item ');
-  function slide(){
-    
-    
-   
-   
-      if(valueSkip == 1){
-        for (let index = 0; index < item.length; index++) {
-          if(pos +1 == index){
-            item.classList.add('active')
-            console.log('opa')
-            valueSkip = 0
-          }
-        }
-      }
-      if(valueBack == 2){
-        for (let index = 0; index < item.length; index++) {
-          if(pos - 1 == index){
-            item.classList.add('active')
-            console.log('opa')
-            valueBack = 0
-          }
-        }
-      }
-      
-    
-  }
-  window.addEventListener('click', function(){
-    slide()
-  })
