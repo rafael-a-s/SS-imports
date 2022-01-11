@@ -383,6 +383,33 @@ nav.show div.icon-close {
 #catalog .container .div-catalog .carousel .item .text-min{
   font-size: 0.9rem;
 }
+/*Filter tags*/
+#catalog .filter{
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  width: 18.75rem ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  
+}
+#catalog .filter .box{
+  display: flex;
+  
+}
+#catalog .filter .box .tags{
+  width: 100%;
+  text-align: center;
+  color: var(--title-color);
+  border-radius: 0.5rem;
+  
+}
+#catalog .filter .box .tags.selectd{
+  background: rgb(211, 202, 202);
+}
+#catalog .filter .box .tags a{
+  cursor: pointer;
+}
 /*====  ABOUT ============================ */
 #about {
   background: white;
