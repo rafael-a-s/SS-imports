@@ -108,21 +108,62 @@ window.addEventListener('scroll', function () {
   backToTop()
   activateMenuAtCurrentSection()
 })
+/* Logica do fileter de brands  */
+var pos = 0 //variavel responsavel pelas posições das imagens no carousel
+var aux = 0 //variavel responsavel por aux na verificação de imagens 
+const brands = document.querySelectorAll('#catalog .container .div-catalog .carousel .brand')
+const tags = document.querySelectorAll('#catalog .filter .box .tags')
+tags[0].addEventListener('click',function(){
+  resetPosImg()
+  pos = 0
+  aux = 1
+  brands.forEach(brands =>{
+    brands.classList.remove('selected')
+  })
+  brands[0].classList.add('selected')
+  tags.forEach(tags => {
+    console.log('entrou')
+    tags.classList.remove('active-tag')
+  });
+  tags[0].classList.add('active-tag')
+})
+
+tags[1].addEventListener('click',function(){
+  resetPosImg()
+  pos = 0
+  aux = 1
+  console.log(aux)
+  brands.forEach(brands =>{
+    brands.classList.remove('selected')
+  })
+  brands[1].classList.add('selected')
+  tags.forEach(tags => {
+    console.log('entrou')
+    tags.classList.remove('active-tag')
+  });
+  tags[1].classList.add('active-tag')
+})
 
 /*Logica carousel*/
-var pos = 0
+
 const skip =
  document.querySelector
  ('#catalog .container .div-catalog .carousel .arrows #skip');
  const back =
   document.querySelector
   ('#catalog .container .div-catalog .carousel .arrows #back');
-
-  const imgs = document.querySelectorAll('#catalog .container .div-catalog .carousel .brand.selected .img ');
   
-  
+  var imgs = document.querySelectorAll('#catalog .container .div-catalog .carousel .brand.selected .img ');
   skip.addEventListener('click',function(){
-    
+
+    if(aux == 1){ //verfica se mudou de marca e faz uma nova cosulta de imagens
+      console.log('Fez a pesquisa de imagens novamente')
+      
+      imgs = null
+      imgs = document.querySelectorAll('#catalog .container .div-catalog .carousel .brand.selected .img ');
+      aux = 0
+      
+    }
     console.log(pos)
     
     if(pos > imgs.length -2){
@@ -176,20 +217,13 @@ const skip =
     }
   })
 
-  /* Logica do fileter de brands  */
-  const brands = document.querySelectorAll('#catalog .container .div-catalog .carousel .brand')
-  const tags = document.querySelectorAll('#catalog .filter .box .tags')
-  tags[0].addEventListener('click',function(){
-    brands.forEach(brands =>{
-      brands.classList.remove('selected')
-    })
-    brands[0].classList.add('selected')
-    tags.forEach(tags => {
-      console.log('entrou')
-      tags.classList.remove('selected')
-    });
-    tags[0].classList.add('selected')
+function resetPosImg(){
+  imgs.forEach(imgs => {
+    imgs.classList.remove('active')
   })
+  imgs[0].classList.add('active')
+  back.style.opacity = '0'
+}
 
   
 

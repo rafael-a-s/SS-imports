@@ -51,6 +51,7 @@ body {
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .title {
@@ -336,7 +337,7 @@ nav.show div.icon-close {
 #catalog .container .div-catalog .carousel .arrows #back{
   opacity: 0;
 }
-#catalog .container .div-catalog p{
+#catalog .container .div-catalog .container .brand.selected .text-container p{
   margin-top: 0;
   font-family: var(--body-font), sans-serif;
   
@@ -349,11 +350,11 @@ nav.show div.icon-close {
   grid-template-columns: 0.2fr;
   
 }
-#catalog .container .div-catalog p span{
+#catalog .container .div-catalog .carousel .brand.selected .text-container p span{
   color: var(--base-color);
   font-size: 2em;
 }
-#catalog .container .div-catalog h3{
+#catalog .container .div-catalog .carousel .brand.selected h3{
   margin-top: 1rem;
   color: var(--title-color);
   text-align: center;
@@ -364,21 +365,31 @@ nav.show div.icon-close {
   height: 100%;
 
 }
+#catalog .div-catalog .carousel .brand{
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+#catalog .div-catalog .carousel .brand.selected{
+  opacity: 1;
+  visibility: visible;
+  display: grid;
+}
 
-#catalog .container .div-catalog .carousel .img{
+#catalog .container .div-catalog .carousel .brand .img{
   width: 100%;
   opacity: 0;
   visibility: hidden;
   display: none;
   
 }
-#catalog .container .div-catalog .carousel .img.active {
+#catalog .container .div-catalog .carousel .brand.selected .img.active {
   opacity: 1;
   visibility: visible;
-  display: flex;
+  display: grid;
   gap: 1rem;
 }
-#catalog .container .div-catalog .carousel .item .text-min{
+#catalog .container .div-catalog .carousel .brand.selected .text-container .text-min{
   font-size: 0.9rem;
 }
 /*Filter tags*/
@@ -402,22 +413,16 @@ nav.show div.icon-close {
   border-radius: 0.5rem;
   
 }
-#catalog .filter .box .tags.active{
-  background: rgb(211, 202, 202);
+#catalog .filter .box .tags.active-tag{
+  background: var(--base-color);
+  color: white;
+  transition:background 800ms;
+  transform: scaleX(1.5px);
 }
 #catalog .filter .box .tags a{
   cursor: pointer;
 }
-#catalog .div-catalog .carousel .brand{
-  opacity: 0;
-  visibility: hidden;
-  display: none;
-}
-#catalog .div-catalog .carousel .brand.selected{
-  opacity: 1;
-  visibility: visible;
-  display: grid;
-}
+
 /*====  ABOUT ============================ */
 #about {
   background: white;
