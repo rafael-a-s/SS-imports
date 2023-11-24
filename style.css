@@ -32,7 +32,7 @@ img {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
-  --title-color-second: red;
+
   /* fonts */
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
@@ -134,7 +134,7 @@ body {
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: rgb(211 202 185);
+  background-color: var(--body-color);
   width: 100%;
 }
 
@@ -149,8 +149,7 @@ body {
 }
 
 .logo span {
-  color: var(--title-color-second);
-  font-size: 2rem;
+  color: var(--base-color);
 }
 
 .logo-alt span {
@@ -171,7 +170,6 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
   transition: color 0.2s;
   position: relative;
 }
@@ -208,10 +206,6 @@ nav .menu {
 
 nav .menu ul {
   display: none;
-}
-nav .menu ul li a {
-  color: white;
- 
 }
 
 /* Mostrar menu */
@@ -275,9 +269,6 @@ nav.show div.icon-close {
 
 #home .image {
   position: relative;
-  top: -9rem;
-  width: 68rem;
-  height: 34rem;
 }
 
 #home .image::before {
@@ -697,14 +688,11 @@ footer .social a:hover {
   }
 
   nav .menu ul li a.title {
-    font-family: var(--title-font );
-    font-size: 1.3rem;
+    font: 400 1rem var(--body-font);
     -webkit-font-smoothing: antialiased;
-    color: black;
   }
 
   nav .menu ul li a.title.active {
-    color: red;
     font-weight: bold;
     -webkit-font-smoothing: auto;
   }
